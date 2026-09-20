@@ -59,7 +59,12 @@ const Board = () => {
       return
     }
     const sqrs = [...bSquares];
-    sqrs[index] = currentUser;
+    if(sqrs[index]==''){
+     sqrs[index] = currentUser;
+    }
+    else{
+      return
+    }
     const winner = checkWinner(sqrs,currentUser);
     console.log("Winner is ini", winner);
     setBSquares(sqrs);
